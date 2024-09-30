@@ -13,6 +13,8 @@
 
         if ($FullTable[$i].Days -ilike "*F") { $Days += "Friday" }
 
+        if ($FullTable[$i].Days -ilike "TBA") { $Days += "TBA" }
+
         $FullTable[$i].Days = $Days
     }
 
