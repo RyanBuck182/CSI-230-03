@@ -1,0 +1,8 @@
+/bin/bash
+/bin/sh
+/usr/bin/sh
+/shell
+/cgi-bin/bash
+/etc/passwd
+/etc/shadow
+/admin
