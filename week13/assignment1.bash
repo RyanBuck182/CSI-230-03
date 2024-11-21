@@ -43,12 +43,6 @@ function displayCoursesByLoc(){
 
 }
 
-# TODO - 2
-# Make a function that displays all the courses that has availability
-# (seat number will be more than 0) for the given course code
-# Add function to the menu
-# Example input: SEC
-# Example output: See the screenshots in canvas
 function displayAvailableCourses(){
 
 	echo -n "Please input a subject: "
@@ -56,9 +50,9 @@ function displayAvailableCourses(){
 
 	echo ""
 	echo "Available courses in $subName :"
-	cat "$courseFile" | grep "$subName" | \
+ 	cat "$courseFile" | awk -v var="$subName" '$1 == var' | \
 	sed 's/ /,/g' | sed 's/;/ | /g' | \
-	awk '{if ($7 > "0") print $0}' | sed 's/,/ /g'
+	awk '$7 > "0"' | sed 's/,/ /g'
 	echo ""
 
 }
